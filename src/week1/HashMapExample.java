@@ -20,6 +20,16 @@ public class HashMapExample
 
         System.out.println(map.containsKey("Wolf"));
 
+        map.remove("Dom");
+
+        System.out.println(map.containsKey("Dom"));
+
+        System.out.println("Is Map Clear? : " + map.isEmpty());
+
+        map.clear();
+
+        System.out.println("Is Map Clear? : " + map.isEmpty());
+
     }
 
 }
