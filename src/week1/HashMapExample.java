@@ -1,6 +1,7 @@
 package week1;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapExample
 {
@@ -26,9 +27,17 @@ public class HashMapExample
 
         System.out.println("Is Map Clear? : " + map.isEmpty());
 
-        map.clear();
 
-        System.out.println("Is Map Clear? : " + map.isEmpty());
+        /**/
+
+        for (Map.Entry<String, Integer> entry : map.entrySet())
+        {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println("Key: " + key + "\nValue: " + value);
+        }
+
+
 
     }
 
