@@ -1,44 +1,73 @@
 package week1;
 
 import java.util.HashMap;
-import java.util.Map;
+
+
+//public class HashMapExample
+//{
+//
+//    private static HashMap<Character, Integer> charCount(String s)
+//    {
+//        HashMap<Character, Integer> count = new HashMap<Character, Integer>();
+//
+//        for (char c : s.toCharArray())
+//        {
+//            if (count.get(c) == null)
+//            {
+//                count.put(c, 0);
+//            }
+//
+//            count.put(c, count.get(c) + 1);
+//        }
+//
+//        return count;
+//    }
+//
+//
+//    public static boolean anagrams(String s1, String s2)
+//    {
+//        return charCount(s1).equals(charCount(s2));
+//    }
+//
+//    public static void main(String[] args)
+//    {
+//        String s1 = "dominick";
+//        String s2 = "dominique";
+//
+//        System.out.println(anagrams(s1, s2));
+//    }
+//}
 
 public class HashMapExample
 {
-    public static void main(String[] args)
+
+    public static HashMap<Character, Integer> charCount(String s)
     {
-        HashMap<String, Integer> map = new HashMap<>();
+        HashMap<Character, Integer> count = new HashMap<Character, Integer>();
 
-        map.put("Jasmine", 31);
-        map.put("Wolf", 1);
-        map.put("Dom", 34);
-
-        // Returns Key
-
-        System.out.println(map.get("Jasmine"));
-
-        // Returns Boolean
-
-        System.out.println(map.containsKey("Wolf"));
-
-        map.remove("Dom");
-
-        System.out.println(map.containsKey("Dom"));
-
-        System.out.println("Is Map Clear? : " + map.isEmpty());
-
-
-        /**/
-
-        for (Map.Entry<String, Integer> entry : map.entrySet())
+        for (char c : s.toCharArray())
         {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-            System.out.println("Key: " + key + "\nValue: " + value);
+            if (count.get(c) == null)
+            {
+                count.put(c, 0);
+            }
+
+            count.put(c, count.get(c) + 1);
         }
 
-
-
+        return count;
     }
 
+    public static boolean anagrams(String s1, String s2)
+    {
+        return charCount(s1).equals(charCount(s2));
+    }
+
+    public static void main(String[] args)
+    {
+        String s1 = "Justin";
+        String s2 = "Dustin";
+
+        System.out.println(anagrams(s1, s2));
+    }
 }
