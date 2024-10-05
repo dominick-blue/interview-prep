@@ -34,21 +34,35 @@ public class DynamicArray
     // Get value at the i-th index
     public int get(int i)
     {
-
+        return arr[i];
     }
 
+    // Insert value n at the i-th index
     public void set(int i, int n)
     {
-
+        arr[i] = n;
     }
 
+    // Insert n in the last position of the array
     public void pushback(int n)
     {
-
+        if (length == capacity)
+        {
+            resize();
+        }
+        arr[length] = n;
+        length++;
     }
 
+    // Remove the last element in the array
     public int popback()
     {
+        if (length > 0)
+        {
+            // Soft delete the last element
+            length--;
+        }
+        return arr[length];
 
     }
 
