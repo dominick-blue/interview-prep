@@ -51,7 +51,37 @@ public class HashTable {
 
     public void insert(int key, int value)
     {
+        int index = this.hashFunction(key);
+        Node node = this.table[index];
 
+        if (node == null)
+        {
+            this.table[index] = new Node(key, value);
+            this.size++;
+        }
+        else
+        {
+            Node prev = null;
+            while (node != null)
+            {
+                if (node.key == key)
+                {
+                    node.value = value;
+                    return;
+                }
+
+                prev = node;
+                node = node.next;
+            }
+            prev.next = new Node(key, value);
+
+            this.size++;
+        }
+
+        if ((double) this.size / this.capacity >= 0.5)
+        {
+            this.resize();
+        }
     }
 
     public int get(int key)
