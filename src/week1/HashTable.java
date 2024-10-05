@@ -44,6 +44,11 @@ public class HashTable {
         this.table = new Node[this.capacity];
     }
 
+    private int hashFunction(int key)
+    {
+        return key % this.capacity;
+    }
+
     public void insert(int key, int value)
     {
 
