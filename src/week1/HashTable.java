@@ -132,16 +132,17 @@ public class HashTable {
 
     public int getSize()
     {
-
+        return this.size;
     }
 
     public int getCapacity()
     {
-
+        return this.capacity;
     }
 
     public void resize()
     {
+
 
     }
 }
