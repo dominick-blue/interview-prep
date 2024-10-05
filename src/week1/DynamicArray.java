@@ -66,9 +66,16 @@ public class DynamicArray
 
     }
 
+    // Resize the array
     private void resize()
     {
-
+        capacity *= 2;
+        int[] newArr = new int[capacity];
+        for (int i = 0; i < length; i++)
+        {
+            newArr[i] = arr[i];
+        }
+        arr = newArr;
     }
 
     public int getSize()
