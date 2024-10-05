@@ -86,7 +86,19 @@ public class HashTable {
 
     public int get(int key)
     {
+        int index = this.hashFunction(key);
+        Node node = this.table[index];
 
+        while (node != null)
+        {
+            if (node.key == key)
+            {
+                return node.value;
+            }
+            node = node.next;
+        }
+
+        return -1;
     }
 
     public boolean remove(int key)
