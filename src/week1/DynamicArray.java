@@ -84,8 +84,9 @@ public class DynamicArray
         return length;
     }
 
+    // Get the capacity of the array
     public int getCapacity()
     {
-
+        return capacity;
     }
 }
