@@ -103,7 +103,31 @@ public class HashTable {
 
     public boolean remove(int key)
     {
+        int index = this.hashFunction(key);
+        Node node = this.table[index];
+        Node prev = null;
 
+        while (node != null)
+        {
+            if (node.key == key)
+            {
+                if (prev != null)
+                {
+                    prev.next = node.next;
+                }
+                else
+                {
+                    this.table[index] = node.next;
+                }
+
+                this.size--;
+                return true;
+            }
+
+            prev = node;
+            node = node.next;
+        }
+        return false;
     }
 
     public int getSize()
