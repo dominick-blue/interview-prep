@@ -142,7 +142,32 @@ public class HashTable {
 
     public void resize()
     {
+        int newCapacity = this.capacity * 2;
 
+        Node[] newTable = new Node[newCapacity];
 
+        for (Node node : this.table)
+        {
+            while (node != null)
+            {
+                int index = node.key % newCapacity;
+
+                if (newTable[index] == null)
+                {
+                    newTable[index] = new Node(node.key, node.value);
+                }
+                else {
+                    Node newNode = newTable[index];
+
+                    while (newNode.next != null) {
+                        newNode = newNode.next;
+                    }
+                    newNode.next = new Node(node.key, node.value);
+                    node = node.next;
+                }
+            }
+            this.capacity = newCapacity;
+            this.table = newTable;
+        }
     }
 }
