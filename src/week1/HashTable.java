@@ -39,7 +39,9 @@ public class HashTable {
 
     public HashTable(int capacity)
     {
-
+        this.capacity = capacity;
+        this.size = 0;
+        this.table = new Node[this.capacity];
     }
 
     public void insert(int key, int value)
