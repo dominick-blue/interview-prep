@@ -78,9 +78,10 @@ public class DynamicArray
         arr = newArr;
     }
 
+    // Get the size of the array
     public int getSize()
     {
-
+        return length;
     }
 
     public int getCapacity()
