@@ -33,6 +33,10 @@ public class HashTable {
     Note: You can choose how to handle collisions.
     * */
 
+    private int capacity;
+    private int size;
+    private Node[] table;
+
     public HashTable(int capacity)
     {
 
